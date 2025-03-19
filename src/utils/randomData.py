@@ -9,6 +9,6 @@ def generateContainerData():
             "typeof": random.choice(typeofChoices),
             "origin": random.choice(originChoices),
             "receivedDate": datetime.datetime.utcnow().isoformat(),
-            "peso": round(random.uniform(50, 1000), 2)   
+            "weight": round(random.uniform(50, 1000), 2)   
         }
     }
