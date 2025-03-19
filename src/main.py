@@ -17,10 +17,11 @@ async def websocket_endpoint(websocket: WebSocket, room: str):
     try:
         while True:
             if room == "industrialTreadMill":
+                await asyncio.sleep(30)
                 data = randomData.generateContainerData()
                 for connection in active_connections[room]:
                     await connection.send_json(data)
-            await asyncio.sleep(30)
+            
     except WebSocketDisconnect:
         active_connections[room].remove(websocket)
         if not active_connections[room]:
